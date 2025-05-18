@@ -71,11 +71,3 @@ uvx --refresh --from git+https://github.com/mortenoh/python-uvx-example python-u
   ```
 
 - **`uvx`**: The `uvx` tool handles the fetching of the code from the specified Git repository (`git+https://github.com/mortenoh/python-uvx-example`), sets up a temporary virtual environment, installs dependencies defined in `pyproject.toml`, and then executes the specified script (`python-uvx-example`).
-
-## Contributing
-
-Contributions are welcome! If you have suggestions for improving this example or find any issues, please feel free to open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details (if one exists, otherwise assume MIT).
