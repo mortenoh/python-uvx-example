@@ -8,7 +8,7 @@ The example CLI, `python-uvx-example`, is a simple application built with Typer 
 
 ## Prerequisites
 
-Before you can run this example, you need to have `uvx` installed on your system. If you haven't installed it yet, please follow the installation instructions for `uvx` [here](https://astral.sh/uv/install.sh) (or refer to the official `uvx` documentation).
+Before you can run this example, you need to have `uvx` installed on your system. If you haven't installed it yet, please follow the installation instructions for `uvx` [here](https://docs.astral.sh/uv/getting-started/installation/).
 
 ## Usage
 
