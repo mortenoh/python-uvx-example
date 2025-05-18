@@ -1,7 +1,81 @@
-# python-uvx-example
+# Python UVX Example: CLI from GitHub
 
-Simple example of running python commands on github with uvx
+This repository provides a simple example of how to define and run a Python command-line interface (CLI) directly from a GitHub repository using `uvx`.
+
+## What it does
+
+The example CLI, `python-uvx-example`, is a simple application built with Typer that greets a user. It demonstrates how `uvx` can execute Python scripts hosted on GitHub without needing to clone the repository locally first.
+
+## Prerequisites
+
+Before you can run this example, you need to have `uvx` installed on your system. If you haven't installed it yet, please follow the installation instructions for `uvx` [here](https://astral.sh/uv/install.sh) (or refer to the official `uvx` documentation).
+
+## Usage
+
+You can run the CLI directly from GitHub using `uvx`.
+
+**Basic command:**
+
+The following command will download (if not already cached) and run the `python-uvx-example` script:
 
 ```sh
-uvx --from git+https://github.com/mortenoh/python-uvx-example python-uvx-example --name Morten
+uvx --from git+https://github.com/mortenoh/python-uvx-example python-uvx-example
 ```
+
+This will execute the default `hello` command, outputting:
+
+```
+👋 Hello, world!
+```
+
+**Providing arguments:**
+
+The `hello` command accepts a `--name` argument. You can pass arguments to the script as follows:
+
+```sh
+uvx --from git+https://github.com/mortenoh/python-uvx-example python-uvx-example --name "UVX User"
+```
+
+This will output:
+
+```
+👋 Hello, UVX User!
+```
+
+**Ensuring the latest version:**
+
+To make sure `uvx` fetches the latest updates from the GitHub repository before running, use the `--refresh` flag:
+
+```sh
+uvx --refresh --from git+https://github.com/mortenoh/python-uvx-example python-uvx-example --name "Fresh UVX"
+```
+
+## How it works
+
+- **`pyproject.toml`**: This file defines the project metadata, dependencies (like `typer`), and the script entry point. `uvx` uses this file to understand how to build and run the Python application.
+  ```toml
+  [project.scripts]
+  python-uvx-example = "python_uvx_example:app"
+  ```
+- **`src/python_uvx_example/__init__.py`**: This file contains the actual Python code for the CLI using the `typer` library.
+
+  ```python
+  import typer
+
+  app = typer.Typer()
+
+  @app.command()
+  def hello(name: str = "world"):
+      """Say hello to someone."""
+      typer.echo(f"👋 Hello, {name}!")
+  ```
+
+- **`uvx`**: The `uvx` tool handles the fetching of the code from the specified Git repository (`git+https://github.com/mortenoh/python-uvx-example`), sets up a temporary virtual environment, installs dependencies defined in `pyproject.toml`, and then executes the specified script (`python-uvx-example`).
+
+## Contributing
+
+Contributions are welcome! If you have suggestions for improving this example or find any issues, please feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details (if one exists, otherwise assume MIT).
