@@ -54,7 +54,7 @@ wheels = [
 ]
 
 [[package]]
-name = "python-uvx-tool"
+name = "python-uvx-example"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

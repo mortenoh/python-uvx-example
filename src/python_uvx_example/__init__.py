@@ -1,5 +1,3 @@
-# src/uvx_tool_demo/__init__.py
-
 import typer
 
 app = typer.Typer()

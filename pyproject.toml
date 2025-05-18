@@ -1,5 +1,5 @@
 [project]
-name = "python-uvx-tool"
+name = "python-uvx-example"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -8,7 +8,7 @@ requires-python = ">=3.13"
 dependencies = ["typer>=0.15.4"]
 
 [project.scripts]
-python-uvx-tool = "python_uvx_tool:app"
+python-uvx-example = "python_uvx_example:app"
 
 [build-system]
 requires = ["hatchling"]
