@@ -1,0 +1,15 @@
+[project]
+name = "python-uvx-tool"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "Morten Hansen", email = "morten@winterop.com" }]
+requires-python = ">=3.13"
+dependencies = ["typer>=0.15.4"]
+
+[project.scripts]
+python-uvx-tool = "python_uvx_tool:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
